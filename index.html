@@ -5,13 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blaine McGraw</title>
 <style>
- p {
-  max-width: 700px;     /* keep the text from being too wide */
-  margin-left: 40px;    /* adds some space from the left edge */
-  margin-right: auto;   /* lets it stop naturally */
-  text-align: left;     /* ensures it's not centered */
-  line-height: 1.6;     /* improves readability */
+/* GLOBAL / BACKGROUND (counts toward the 6+ styled elements) */
+:root { --ink: #1f2937; --bg: #f7fafc; --brand: #2563eb; --card: #ffffff; }
+* { box-sizing: border-box; }
+
+p {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;
 }
+
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background-color: var(--bg);          /* background-color requirement */
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Constrain line length without centering text */
+main {
+  max-width: 960px;                      /* prevents paragraphs from full width */
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;                      /* keep text left-aligned */
+}
+
+/* HEADER + NAV */
+.site-header {
+  background: linear-gradient(90deg, var(--brand), #60a5fa);
+  color: white;
+  padding: 1rem;
+}
+img {
+  display: block;        /* removes default inline spacing */
+  margin: 1rem auto;     /* centers the image horizontally */
+  max-width: 100%;       /* keeps it responsive */
+  height: auto;          /* preserves proportions */
+  border-radius: 8px;    /* optional – rounded corners */
+}
+figure {
+  text-align: center;   /* centers both the image and the caption */
+  margin: 1.5rem auto;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+  text-align: center;   /* centers the text */
+  font-weight: bold;    /* makes it bold */
+  font-size: 1.2rem;    /* increases the font size */
+  color: #333;          /* darker text for contrast */
+  margin-top: 0.5rem;
+}
+
+.site-header h1 { margin: 0 0 .5rem; }
+nav { display: flex; gap: .5rem; flex-wrap: wrap; }
+header {
+  text-align: center;
+}
+
+.btn {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  text-decoration: none;
+  padding: .5rem .75rem;
+  border-radius: .375rem;
+  border: 1px solid rgba(255,255,255,.25);
+}
+.btn:hover { background: rgba(255,255,255,.25); }
+
+/* CLASS used for custom formatting (requirement #2) */
+/* BOX MODEL: border + padding + margin clearly visible (requirement #3) */
+.card {
+  background: var(--card);
+  border: 2px solid #e5e7eb;            /* border */
+  padding: 1rem 1.25rem;                 /* padding */
+  margin: 1rem 0;                        /* margin */
+  border-radius: .5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.accent { letter-spacing: .5px; }
+
+/* TYPOGRAPHY & LISTS (more styled elements) */
+h2 { margin-top: 0; }
+p { margin: .5rem 0 1rem; }
+ul { padding-left: 1.25rem; }
+li { margin: .25rem 0; }
+
+/* TABLE STYLING (requirement #4) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: .5rem;
+  font-size: 0.95rem;
+}
+caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: .6rem .7rem;
+  text-align: left;
+}
+thead th {
+  background: #f3f4f6;
+}
+.striped tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+tbody tr:hover {
+  background: #eef2ff;
+}
+
+/* FOOTER */
+footer {
+  max-width: 960px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+  color: #6b7280;
+}
+
 
 </style>
 </head>
@@ -27,6 +153,12 @@
           </nav>
         </div>
     </header>
+    <Main>
+      <figure>
+  <img src="images/Izzy and Blaine-Kinnick.jpg" alt="Izzy and Blaine at Kinnick Stadium" width="400">
+  <figcaption>My girlfriend and I at Kinnick</figcaption>
+</figure>
+
     <section>
         <h2>About Blaine</h2>
         <p>I grew up in Alburnett, Iowa a small town just north of Cedar Rapids. 
@@ -76,5 +208,10 @@
             <li>Wisconsin Dells, Wisconsin</li>
         </ul>
     </section>
+    </Main>
+    <figure>
+  <img src="images/IMG_0216.jpeg" alt="My friends and I at Summer Smash" width="400">
+  <figcaption>My friends and I at Summer Smash</figcaption>
+</figure>
 </body>
 </html>
